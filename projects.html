@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>あおのホームページ | 作品一覧</title>
+  <script>
+    (() => {
+      try {
+        const savedTheme = localStorage.getItem("site-theme");
+        if (savedTheme === "dark" || savedTheme === "light") {
+          document.documentElement.setAttribute("data-theme", savedTheme);
+        }
+      } catch (error) {}
+    })();
+  </script>
+  <style>
+    html { background: #fff7fb; }
+    html[data-theme="dark"] { background: #11162a; }
+  </style>
+  <link rel="stylesheet" href="styles.css">
+  <script src="theme.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">あおのホームページ</h1>
+      <div class="header-actions">
+        <button class="menu-toggle" type="button" aria-controls="primary-nav" aria-expanded="false">メニュー</button>
+        <nav id="primary-nav" class="site-nav" aria-label="メインナビゲーション">
+          <ul class="nav-list">
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="about.html">自己紹介</a></li>
+            <li><a href="projects.html" aria-current="page">作品一覧</a></li>
+            <li><a href="contact.html">問い合わせ</a></li>
+          </ul>
+        </nav>
+        <label class="theme-switch" for="theme-toggle">
+          <input id="theme-toggle" class="theme-switch-input" type="checkbox" role="switch" aria-label="表示テーマを切り替える">
+          <span class="theme-switch-track" aria-hidden="true"><span class="theme-switch-thumb"></span></span>
+          <span class="theme-switch-label">ダークモード</span>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>作品一覧</h2>
+    <p>これまでに作ったものや、今後追加していく物をまとめています。</p>
+
+    <section class="cards">
+      <article class="card">
+        <h3>公式ホームページ<br>（このサイト）</h3>
+        <p>複数ページ構成で、自己紹介・作品・問い合わせを整理して掲載。</p>
+        <p><strong>使用技術:</strong> HTML / CSS / JavaScript</p>
+        <div class="button-row">
+          <a class="button" href="https://ao03248.github.io/" target="_blank" rel="noopener noreferrer">公開サイトを見る</a>
+          <a class="button button-secondary" href="downloads/official-homepage-overview.txt" download>概要をダウンロード</a>
+        </div>
+      </article>
+      <article class="card">
+        <h3>Android遠隔操作アプリ＆HTML</h3>
+        <p>GASを使ってサーバー不要でP2P通信を確立させ、外出先からのAndroid端末の遠隔操作を無料で可能にするアプリとHTMLのセット。</p>
+        <p><strong>使用技術:</strong> GAS / HTML / CSS / Javascript / Flutter / Dart</p>
+        <div class="button-row">
+          <a class="button" href="contact.html">公開予定を問い合わせ</a>
+          <a class="button button-secondary" href="downloads/android-remote-control-app.txt" download>仕様メモをダウンロード</a>
+        </div>
+      </article>
+      <article class="card">
+        <h3>REINE(LINE風チャットツール)</h3>
+        <p>Google Apps Scriptを使った、LINE風のチャットツール。</p>
+        <p><strong>使用技術:</strong> GAS / HTML / CSS / JavaScript</p>
+        <div class="button-row">
+          <a class="button" href="contact.html">デモURLを問い合わせ</a>
+          <a class="button button-secondary" href="downloads/reine-chat-tool.txt" download>紹介テキストをダウンロード</a>
+        </div>
+      </article>
+      <article class="card">
+        <h3>ioKey</h3>
+        <p>Android向けに開発中の、Ios風のキーボードアプリ。</p>
+        <p><strong>使用技術:</strong> Flutter / Dart</p>
+        <div class="button-row">
+          <a class="button" href="contact.html">進捗を問い合わせ</a>
+          <a class="button button-secondary" href="downloads/iokey-project-note.txt" download>プロジェクトノート</a>
+        </div>
+      </article>
+      <article class="card">
+        <h3>江東区遠征<br>(桃鉄のパロディゲー)</h3>
+        <p>江東区を舞台にした、桃鉄のパロディゲーム。まだまだ開発途中。</p>
+        <p><strong>使用技術:</strong> GAS / HTML / CSS / JavaScript</p>
+        <div class="button-row">
+          <a class="button" href="contact.html">プレイ予定を問い合わせ</a>
+          <a class="button button-secondary" href="downloads/koto-expedition-game-note.txt" download>企画メモをダウンロード</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>&copy; 2026 あお</small>
+    </div>
+  </footer>
+</body>
+</html>

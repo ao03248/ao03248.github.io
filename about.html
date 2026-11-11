@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>あおのホームページ | 自己紹介</title>
+  <script>
+    (() => {
+      try {
+        const savedTheme = localStorage.getItem("site-theme");
+        if (savedTheme === "dark" || savedTheme === "light") {
+          document.documentElement.setAttribute("data-theme", savedTheme);
+        }
+      } catch (error) {}
+    })();
+  </script>
+  <style>
+    html { background: #fff7fb; }
+    html[data-theme="dark"] { background: #11162a; }
+  </style>
+  <link rel="stylesheet" href="styles.css">
+  <script src="theme.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">あおのホームページ</h1>
+      <div class="header-actions">
+        <button class="menu-toggle" type="button" aria-controls="primary-nav" aria-expanded="false">メニュー</button>
+        <nav id="primary-nav" class="site-nav" aria-label="メインナビゲーション">
+          <ul class="nav-list">
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="about.html" aria-current="page">自己紹介</a></li>
+            <li><a href="projects.html">作品一覧</a></li>
+            <li><a href="contact.html">問い合わせ</a></li>
+          </ul>
+        </nav>
+        <label class="theme-switch" for="theme-toggle">
+          <input id="theme-toggle" class="theme-switch-input" type="checkbox" role="switch" aria-label="表示テーマを切り替える">
+          <span class="theme-switch-track" aria-hidden="true"><span class="theme-switch-thumb"></span></span>
+          <span class="theme-switch-label">ダークモード</span>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>自己紹介</h2>
+      <p>
+        こんにちは、あおです。<br>
+        学習しながら、実際に手を動かしてサイトやツールを作ることを大切にしています。
+      </p>
+    </section>
+
+    <section class="cards">
+      <article class="card">
+        <h3>使っている技術</h3>
+        <ul>
+          <li>HTML / CSS / JavaScript</li>
+          <li>Python</li>
+          <li>VScode</li>
+          <li>Flutter</li>
+          <li>GAS(Google Apps Script)</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>開発の進め方</h3>
+        <ul>
+          <li>まず基礎をバイブコーディングで作る</li>
+          <li>テストして改善点を列挙<br>→自力かバイブコーディングで修正</li>
+          <li>繰り返し、満足のいくものになったら公開・更新する</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>&copy; 2026 あお</small>
+    </div>
+  </footer>
+</body>
+</html>
